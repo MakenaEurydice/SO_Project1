@@ -35,12 +35,5 @@ Suricata reported EternalBlue probing and payload-associated traffic. Zeek indep
 ### Finding 4: Post-exploitation and file movement
 The host was enumerated using Windows commands. An HTTP server on Kali returned `test.txt` to the XP browser. Separately, Meterpreter successfully downloaded `C:\evidence-lab.txt` (19 bytes) to Kali. This demonstrates a synthetic outbound transfer from the target, but the uploaded screenshots do not prove that the file contents were decoded by Security Onion.
 
-## Caveats
-- Two successful sessions are visible; treat them as distinct executions, not a single continuous session.
-- The `whoami` command failed on Windows XP; Meterpreter `getuid` is the successful privilege evidence.
-- The HTTP GET is Kali-to-XP file delivery; the Meterpreter download is XP-to-Kali file retrieval.
-- IDS detection does not imply automatic blocking. An alert detail shows `rule.action: allowed`.
-- Some screenshots show a large total event count; this is not an incident-specific count.
-
 ## Containment and remediation recommendations
 Patch or replace unsupported Windows XP, restrict TCP/445, disable SMBv1 where feasible, use network segmentation, and add endpoint monitoring to complement network evidence.

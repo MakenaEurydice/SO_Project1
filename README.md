@@ -12,7 +12,6 @@ A controlled lab attack against Windows XP SP3 was investigated using Security O
 | Target | Windows XP SP3, x86, hostname MESOPOTAMIA | `192.168.56.105` |
 | Monitor | Security Onion Evaluation mode | SOC at `10.0.2.16` (management UI) |
 
-> Network isolation and capture configuration should be verified independently; screenshots establish telemetry visibility but not full network isolation.
 
 ## Attack chain
 1. **Discovery:** Nmap SYN scan of TCP ports 1–1000 found 139/tcp and 445/tcp open; full scan found the same two open ports, 2869 and 3389 closed, and 65,531 filtered. [Initial scan](screenshots/01-initial-nmap.png) · [Full scan](screenshots/02-full-port-scan.png)
